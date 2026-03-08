@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  aitechpulse:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    container_name: aitechpulse
+    ports:
+      - "8080:80"
+    restart: unless-stopped
+    labels:
+      - "app=aitechpulse"
+      - "team=engineering"
+    healthcheck:
+      test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost:80/"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
