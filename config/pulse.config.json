@@ -1,0 +1,42 @@
+{
+  "app": {
+    "title": "TechPulse",
+    "subtitle": "Technology Landscape Radar",
+    "teamName": "Your Team Name",
+    "version": "1.0.0"
+  },
+  "dataSource": {
+    "type": "url",
+    "url": "https://your-company.sharepoint.com/sites/your-team/Shared%20Documents/General/tech-landscape.xlsx",
+    "fallback": "upload",
+    "sheetName": "Sheet1",
+    "refreshIntervalMinutes": 30,
+    "columns": {
+      "name": "name",
+      "quadrant": "quadrant",
+      "ring": "ring",
+      "status": "status"
+    }
+  },
+  "radar": {
+    "rings": ["Adopt", "Trial", "Assess", "Hold"],
+    "quadrantColors": ["#1abbad", "#f38a3e", "#86b782", "#b32068"],
+    "statusRules": {
+      "new": "full",
+      "Moved in/out": "half",
+      "No change": "none"
+    }
+  },
+  "theme": {
+    "primaryColor": "#00b386",
+    "darkBackground": "#1a1a2e",
+    "fontFamily": "Source Sans 3, system-ui, sans-serif"
+  },
+  "features": {
+    "enablePrint": true,
+    "enableUpload": true,
+    "enableSearch": true,
+    "enableAutoRefresh": true,
+    "showQuadrantPanels": true
+  }
+}
